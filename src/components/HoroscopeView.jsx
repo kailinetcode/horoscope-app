@@ -20,7 +20,7 @@ export default function HoroscopeView({ signName, onReset }) {
   const [reading, setReading] = useState(staticReading);
 
   useEffect(() => {
-    fetch('/daily-readings.json')
+    fetch(`${import.meta.env.BASE_URL}daily-readings.json`)
       .then(r => r.json())
       .then(data => {
         const r = data?.readings?.[signName];
